@@ -10,38 +10,40 @@ import groovy.util.GroovyTestCase;
  */
 class GraphTest extends GroovyTestCase {
 
+	// TODO: see http://groovy.codehaus.org/Using+GSpec+with+Groovy
+	
 	/**
 	 * Test method for {@link java.lang.Object#toString()}.
 	 */
-	public void testEmptyGraphToString() {
+	void testEmptyGraphToString() {
 		assert new Graph().toString() == "[]"
 	}
 
-//	public void testOneNodeNoEdgeGraphToString() {
-	public void testTrivialGraphToString() {
+//	void testOneNodeNoEdgeGraphToString() {
+	void testTrivialGraphToString() {
 		assert (new Graph() + new Graph.Node("a")).toString() == "[a]"
 		assert (new Graph() + new Graph.Node("b")).toString() == "[b]"
 	}
 
-	public void testSomeNodesNoEdgeGraphToString() {
+	void testSomeNodesNoEdgeGraphToString() {
 		assert (new Graph() + new Graph.Node("a") + new Graph.Node("b")).toString() == "[a, b]"
 	}
 
-	public void testOneNodeOneEdgeToString() {
+	void testOneNodeOneEdgeToString() {
 		assert (new Graph() + new Graph.Node("a") + new Graph.Edge("a", "a")).toString() == "[[a]; [(a, a)]]"
 	}
 	
 //	/**
 //	 * Test method for {@link java.lang.Object#equals(java.lang.Object)}.
 //	 */
-//	public void testEquals(){
+//	void testEquals() {
 //	fail("Not yet implemented"); // TODO
 //	}
 
 //	/**
 //	 * Test method for {@link java.lang.Object#hashCode()}.
 //	 */
-//	public void testHashCode(){
+//	void testHashCode() {
 //	fail("Not yet implemented"); // TODO
 //	}
 
